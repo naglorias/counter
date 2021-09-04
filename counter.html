@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <title>Counter</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: "Caveat", cursive;
+        background: #8e9eab; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #eef2f3,
+          #8e9eab
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #eef2f3,
+          #8e9eab
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .wrapper {
+        width: 700px;
+        height: 400px;
+        margin-top: 7rem;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border: 0.88rem solid #ff4c29;
+        background-color: #f7f7ee;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .wrapper > div {
+        padding: 0rem;
+        margin: 2.3rem;
+      }
+      .wrapper h2 {
+        font-size: 2.4em;
+      }
+      .counter h1 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 3.6em;
+      }
+      .inc-dec-btns {
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .inc-dec-btns button {
+        width: 120px;
+        height: 80px;
+        margin-left: 0.6rem;
+        background-color: transparent;
+        outline: none;
+        border: 0.2rem solid #ff4c29;
+        background-color: #53b8bb;
+        cursor: pointer;
+      }
+      .inc-dec-btns .material-icons {
+        font-size: 2.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Counter</h2>
+      <div class="counter">
+        <h1></h1>
+      </div>
+      <div class="inc-dec-btns">
+        <button id="increment">
+          <span class="material-icons"> add_circle </span>
+        </button>
+        <button id="decrement">
+          <span class="material-icons">remove_circle </span>
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let displayCount = document.querySelector(".counter h1");
+    let increase = document.getElementById("increment");
+    let decrease = document.getElementById("decrement");
+    let counter = 0;
+    increase.addEventListener("click", () => {
+      counter++;
+      displayCount.textContent = counter;
+    });
+    decrease.addEventListener("click", () => {
+      counter--;
+      displayCount.textContent = counter;
+    });
+    displayCount.textContent = counter;
+  </script>
+</html>
